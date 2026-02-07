@@ -8,7 +8,7 @@ const ContactUs = () => {
     const t = useTranslations("contact");
     return (
         <div id="contact">
-            <div className="mt-35 relative">
+            <div className="mt-16 lg:mt-35 relative">
                 <GradientText text={` ${t("title")}`} className="absolute -top-16 left-1/2 -translate-x-1/2 opacity-60" />
                 <h2 className="text-[#FFFFFFE5] font-bold text-2xl sm:text-3xl md:text-4xl lg:text-[48px] font_mmr text-center">
                     {t("title")}

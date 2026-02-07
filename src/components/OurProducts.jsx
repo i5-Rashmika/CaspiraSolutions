@@ -93,37 +93,37 @@ const OurProducts = () => {
     if (!isMounted) {
         return (
             <div id="our-solutions" className='mb-16 relative' ref={sectionRef} style={{ opacity: 1, visibility: 'visible' }}>
-                <div ref={spotlightRef} className="h-[700px] w-[138%] lg:w-[110%] absolute top-0 left-0">
-                    <Spotlight
-                        className="-top-40 left-0 md:-top-20 md:left-60 absolute pointer-events-none"
-                        fill="url(#spotlightGradient)"
-                    />
-                </div>
-                <Image src={"/images/png/looper.png"} alt="looper" fill className="fixed -bottom-[80%] right-0" />
-                <Image
-                    src={"/images/png/serviceellipse.png"}
-                    alt='service ellipse'
-                    height={555}
-                    width={653}
-                    className="absolute right-0 -top-30"
+            <div ref={spotlightRef} className="h-[500px] sm:h-[600px] lg:h-[700px] w-full sm:w-[108%] lg:w-[100%] absolute top-0 left-0">
+                <Spotlight
+                className="-top-20 left-0 sm:-top-20 sm:left-40 md:-top-20 md:left-60 absolute pointer-events-none"
+                fill="url(#spotlightGradient)"
                 />
+            </div>
+            <Image src={"/images/png/looper.png"} alt="looper" fill className="fixed -bottom-[80%] right-0" />
+            {/* <Image
+                src={"/images/png/serviceellipse.png"}
+                alt='service ellipse'
+                height={555}
+                width={653}
+                className="absolute right-0 -top-20 sm:-top-30 w-full sm:w-auto"
+            /> */}
 
-                <GradientText text={t('ourSolutions')} className="absolute -top-15 left-1/2 -translate-x-1/2 opacity-60" />
+            <GradientText text={t('ourSolutions')} className="absolute -top-10 sm:-top-15 left-1/2 -translate-x-1/2 opacity-60" />
 
-                {/* Show title directly without TextAnimation */}
-                <h2
-                    ref={titleRef}
-                    className="text-[#FFFFFFE5] font-bold text-2xl sm:text-3xl md:text-4xl lg:text-[48px] font_mmr text-center mt-16"
-                    style={{ opacity: 1 }}
-                >
-                    {t('ourSolutions')}
-                </h2>
+            {/* Show title directly without TextAnimation */}
+            <h2
+                ref={titleRef}
+                className="text-[#FFFFFFE5] font-bold text-xl sm:text-2xl md:text-3xl lg:text-[48px] font_mmr text-center mt-8 sm:mt-12 md:mt-16 px-4"
+                style={{ opacity: 1 }}
+            >
+                {t('ourSolutions')}
+            </h2>
 
-                <SubParagraph
-                    title={t('solutionsSlogan')}
-                />
+            <SubParagraph
+                title={t('solutionsSlogan')}
+            />
 
-                <CardSlider />
+            <CardSlider />
             </div>
         );
     }
@@ -136,7 +136,7 @@ const OurProducts = () => {
                     'absolute inset-0 flex items-center justify-center rounded-xl '
                 )}
             />
-            <div ref={spotlightRef} className="h-[700px] w-[138%] lg:w-[110%] absolute top-0 left-0">
+            <div ref={spotlightRef} className="h-[700px] w-full lg:w-[110%] absolute top-0 left-0">
                 <Spotlight
                     className="-top-40 left-0 md:-top-20 md:left-60 absolute pointer-events-none"
                     fill="url(#spotlightGradient)"
@@ -148,7 +148,7 @@ const OurProducts = () => {
                 alt='service ellipse'
                 height={555}
                 width={653}
-                className="absolute right-0 -top-30"
+                className="absolute right-0 -top-30 hidden lg:block"
             />
 
             <GradientText text={t('ourSolutions')} className="absolute -top-15 left-1/2 -translate-x-1/2 opacity-60" />

@@ -51,7 +51,7 @@ export default function TestimonialsCards() {
   const TestimonialCard = ({ item, index }) => (
     <div
       key={index}
-      className="nav_bg backdrop-blur-md rounded-xl p-4 transition-all w-[350px]! sm:w-[450px] shrink-0 mx-3"
+      className="nav_bg backdrop-blur-md rounded-xl p-4 transition-all w-[280px] sm:w-[350px] md:w-[450px] shrink-0 mx-3"
     >
       <div className="flex items-start justify-between gap-2">
         <QuoteIcon />

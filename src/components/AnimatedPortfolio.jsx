@@ -149,7 +149,7 @@ export default function PortfolioSection() {
         return (
             <div
                 ref={sectionRef}
-                className="w-full text-white px-4 sm:px-6 md:px-10 lg:px-20 relative pb-20"
+                className="w-full text-white px-4 sm:px-6 md:px-10 lg:px-10 relative pb-20"
                 style={{ opacity: 1, visibility: 'visible' }}
             >
                 {/* Background Ellipse */}
@@ -165,13 +165,13 @@ export default function PortfolioSection() {
                     {/* Filter Buttons */}
                     <div
                         ref={filterRef}
-                        className="flex gap-3 mt-10 nav_bg py-3 justify-between px-2 rounded-[36px] overflow-x-auto whitespace-nowrap w-full"
+                        className="flex gap-2 sm:gap-3 mt-10 nav_bg py-3 sm:justify-between px-2 rounded-[36px] overflow-x-auto whitespace-nowrap w-full"
                     >
                         {categories.map((cat) => (
                             <button
                                 key={cat}
                                 onClick={() => setActive(cat)}
-                                className={`filter-btn px-5 py-2 rounded-[36px] border border-transparent cursor-pointer transition-all duration-200 text-sm sm:text-base ${active === cat
+                                className={`filter-btn px-3 sm:px-5 py-2 rounded-[36px] border border-transparent cursor-pointer transition-all duration-200 text-xs sm:text-base ${active === cat
                                     ? "buttonbg text-white scale-105"
                                     : "text-gray-300 hover:text-white"
                                     }`}
@@ -200,7 +200,7 @@ export default function PortfolioSection() {
                         {filteredItems.map((item) => (
                             <div
                                 key={item.id}
-                                className={`portfolio-item group cursor-pointer rounded-xl p-2 transition-all duration-300 hover:shadow-[0_8px_20px_rgba(0,0,0,0.3)] ${isSingleCategory ? "w-full max-w-md" : ""}`}
+                                className={`portfolio-item group cursor-pointer rounded-xl p-2 transition-all duration-300 hover:shadow-[0_8px_20px_rgba(0,0,0,0.3)] ${isSingleCategory ? "w-full max-w-md" : "max-w-sm sm:max-w-none mx-auto sm:mx-0"}`}
                                 style={{ opacity: 1 }}
                             >
                                 <div className="relative overflow-hidden rounded-lg">
@@ -209,7 +209,7 @@ export default function PortfolioSection() {
                                         alt={item.title}
                                         width={500}
                                         height={300}
-                                        className="w-full h-52 sm:h-60 md:h-64 lg:h-56 object-cover rounded-lg transition-all duration-500 group-hover:scale-110"
+                                        className="w-full h-auto object-cover rounded-lg transition-all duration-500 group-hover:scale-110"
                                     />
                                 </div>
 
@@ -256,7 +256,7 @@ export default function PortfolioSection() {
     return (
         <div
             ref={sectionRef}
-            className="w-full text-white px-4 sm:px-6 md:px-10 lg:px-20 relative pb-20"
+            className="w-full text-white px-4 sm:px-6 md:px-10 lg:px-10 relative pb-20"
             style={{ opacity: 1, visibility: 'visible' }}
         >
             {/* Background Ellipse */}
@@ -272,13 +272,13 @@ export default function PortfolioSection() {
                 {/* Filter Buttons */}
                 <div
                     ref={filterRef}
-                    className="flex gap-3 mt-10 nav_bg py-3 justify-between px-2 rounded-[36px] overflow-x-auto whitespace-nowrap w-full"
+                    className="flex gap-2 sm:gap-3 mt-10 nav_bg py-3 sm:justify-between px-2 rounded-[36px] overflow-x-auto whitespace-nowrap w-full"
                 >
                     {categories.map((cat) => (
                         <button
                             key={cat}
                             onClick={() => setActive(cat)}
-                            className={`filter-btn px-5 py-2 rounded-[36px] border border-transparent cursor-pointer transition-all duration-200 text-sm sm:text-base ${active === cat
+                            className={`filter-btn px-3 sm:px-5 py-2 rounded-[36px] border border-transparent cursor-pointer transition-all duration-200 text-xs sm:text-base ${active === cat
                                 ? "buttonbg text-white scale-105"
                                 : "text-gray-300 hover:text-white"
                                 }`}
@@ -306,7 +306,7 @@ export default function PortfolioSection() {
                     {filteredItems.map((item) => (
                         <div
                             key={item.id}
-                            className={`portfolio-item group cursor-pointer rounded-xl p-2 transition-all duration-300 hover:shadow-[0_8px_20px_rgba(0,0,0,0.3)] ${isSingleCategory ? "w-full max-w-md" : ""}`}
+                            className={`portfolio-item group cursor-pointer rounded-xl p-2 transition-all duration-300 hover:shadow-[0_8px_20px_rgba(0,0,0,0.3)] ${isSingleCategory ? "w-full max-w-md" : "max-w-sm sm:max-w-none mx-auto sm:mx-0"}`}
                         >
                             <div className="relative overflow-hidden rounded-lg">
                                 <Image
@@ -314,7 +314,7 @@ export default function PortfolioSection() {
                                     alt={item.title}
                                     width={500}
                                     height={300}
-                                    className="w-full h-52 sm:h-60 md:h-64 lg:h-56 object-cover rounded-lg transition-all duration-500 group-hover:scale-110"
+                                    className="w-full h-auto object-cover rounded-lg transition-all duration-500 group-hover:scale-110"
                                 />
                             </div>
 

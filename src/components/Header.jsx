@@ -176,15 +176,15 @@ const Header = () => {
     const rotatingWord = t(HERO_ROTATING_KEYS[wordIndex]);
 
     return (
-        <div ref={headerRef} className="mt-18 mx-auto relative">
+        <div ref={headerRef} className="mt-10 lg:mt-18 mx-auto relative overflow-x-clip">
             {/* Rectangle BG */}
-            <div ref={rectRef} className="absolute right-0 -top-30 h-full w-full z-0">
+            <div ref={rectRef} className="absolute right-0 -top-30 h-full w-full z-0 overflow-hidden">
                 <Image
                     src={"/images/png/headerlightray.png"}
                     alt="background"
                     height={863}
                     width={700}
-                    className="h-[863px] w-[700px] absolute right-0 -top-20"
+                    className="h-[400px] lg:h-[863px] w-[350px] lg:w-[700px] absolute right-0 -top-20"
                 />
             </div>
 
@@ -201,7 +201,7 @@ const Header = () => {
                 alt="ellipse"
                 height={700}
                 width={706}
-                className="mx-auto absolute left-1/6 top-0 h-full z-[-1]"
+                className="mx-auto absolute left-0 top-0 h-full z-[-1] hidden lg:block"
             />
 
             <Image
@@ -209,7 +209,7 @@ const Header = () => {
                 alt="light effect"
                 height={700}
                 width={706}
-                className="mx-auto -top-10 absolute left-1/6 h-full z-[-100] main_blur w-full"
+                className="mx-auto -top-10 absolute left-0 h-full z-[-100] main_blur w-full"
             />
 
             <Image
@@ -235,7 +235,7 @@ const Header = () => {
 
             {/* ⭐ Hero 主标题：第一行固定 Where Strategy Meets，第二行 3 词轮播 */}
             <div className="header-title opacity-0 translate-y-5">
-                <div className="text-center mb-5 text-4xl lg:text-6xl">
+                <div className="text-center mb-5 text-2xl sm:text-4xl lg:text-6xl">
                     <p className="font-semibold gradient_text">
                         {t.rich("typed5", { i: (chunks) => <i>{chunks}</i> })}
                     </p>
@@ -291,7 +291,7 @@ const Header = () => {
             {/* Company Logos */}
             <div className="max-w-full header_blur bg-[#00010B] pt-10">
                 <div className="max-w-7xl mx-auto">
-                    <p className="company-title opacity-0 translate-y-5 font-semibold text-[20px] text-center">
+                    <p className="company-title opacity-0 translate-y-5 font-semibold text-base sm:text-[20px] text-center px-4">
                         {t("companies")}
                     </p>
 
@@ -302,7 +302,7 @@ const Header = () => {
                             alt="left stroke"
                             height={220}
                             width={208}
-                            className="absolute -left-15 -top-1/2 z-20 pointer-events-none"
+                            className="absolute -left-15 -top-1/2 z-20 pointer-events-none hidden lg:block"
                         />
                         {/* Decorative Strokes */}
                         <Image
@@ -310,10 +310,10 @@ const Header = () => {
                             alt="right stroke"
                             height={220}
                             width={208}
-                            className="absolute -right-15 -top-1/2 z-20 pointer-events-none"
+                            className="absolute -right-15 -top-1/2 z-20 pointer-events-none hidden lg:block"
                         />
 
-                        <div ref={sliderRef} className="slider-wrapper flex gap-20 whitespace-nowrap z-10">
+                        <div ref={sliderRef} className="slider-wrapper flex gap-8 lg:gap-20 whitespace-nowrap z-10">
                             {[Boltshit, LightBox, FeatherDev, GlobalBank, LogoIp].map((Logo, i) => (
                                 <div key={i} className="company-logos opacity-0 translate-y-5">
                                     <Logo />

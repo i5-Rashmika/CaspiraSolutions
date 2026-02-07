@@ -5,7 +5,7 @@ const GradientText = ({ text, className }) => {
             height="120"
             viewBox="0 0 1000 150"
             preserveAspectRatio="xMidYMid meet"
-            className={className}
+            className={`hidden sm:block ${className}`}
         >
             <defs>
                 {/* Text Fill Gradient */}

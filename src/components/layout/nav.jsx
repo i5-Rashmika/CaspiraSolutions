@@ -225,7 +225,7 @@ export function NavbarDemo() {
             <div className="fixed inset-x-0 top-5 z-[10000] lg:hidden">
                 <div
                     ref={mobileNavRef}
-                    className="relative z-50 mx-auto flex w-[95%] items-center justify-between bg-transparent px-4 py-4 rounded-2xl nav_bg transition-all duration-300"
+                    className="relative z-50 mx-auto flex w-[90%] items-center justify-between bg-transparent px-4 py-4 rounded-2xl nav_bg transition-all duration-300"
                 >
                     <NavbarLogo />
 

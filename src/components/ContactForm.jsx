@@ -128,10 +128,10 @@ export default function ContactForm() {
   // If not mounted yet, show basic content without animations
   if (!isMounted) {
     return (
-      <div ref={containerRef} className="py-6 px-4 relative contact-section" style={{ opacity: 1, visibility: 'visible' }}>
+      <div ref={containerRef} className="py-6 px-4 relative contact-section overflow-x-clip" style={{ opacity: 1, visibility: 'visible' }}>
         <div
           ref={spotlightRef}
-          className="h-[1000px] w-[138%] lg:w-[110%] absolute top-0 left-0"
+          className="absolute top-0 left-0"
           style={{ opacity: 1 }}
         >
           <Spotlight
@@ -145,10 +145,10 @@ export default function ContactForm() {
           alt="ellipse"
           height={700}
           width={706}
-          className="mx-auto absolute left-1/8 top-0 h-full z-0"
+          className="mx-auto absolute left-0 top-0 h-full z-0 hidden lg:block"
         />
 
-        <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-20 nav_bg p-4 lg:p-10 rounded-[20px] border_map backdrop-blur-[100px] max-w-7xl mx-auto relative z-50">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 nav_bg p-4 lg:p-10 rounded-[20px] border_map backdrop-blur-[100px] max-w-7xl mx-auto relative z-50">
           {/* LEFT SIDE */}
           <div ref={leftRef} className="relative z-50" style={{ opacity: 1 }}>
             <h2 className="font-semibold text-2xl mb-2">
@@ -164,7 +164,7 @@ export default function ContactForm() {
               </p>
             ) : (
               <form
-                className="space-y-4 mt-10"
+                className="space-y-4 mt-6 sm:mt-10"
                 onSubmit={(e) => {
                   e.preventDefault();
                   setSubmitted(true);
@@ -238,10 +238,10 @@ export default function ContactForm() {
   }
 
   return (
-    <div ref={containerRef} className="py-6 px-4 relative contact-section" style={{ opacity: 1, visibility: 'visible' }}>
+    <div ref={containerRef} className="py-6 px-4 relative contact-section overflow-x-clip" style={{ opacity: 1, visibility: 'visible' }}>
       <div
         ref={spotlightRef}
-        className="h-[1000px] w-[138%] lg:w-[110%] absolute top-0 left-0"
+        className="absolute top-0 left-0"
       >
         <Spotlight
           className="-top-40 left-0 md:-top-20 md:left-60 absolute pointer-events-none"
@@ -254,10 +254,10 @@ export default function ContactForm() {
         alt="ellipse"
         height={700}
         width={706}
-        className="mx-auto absolute left-1/8 top-0 h-full z-0"
+        className="mx-auto absolute left-0 top-0 h-full z-0 hidden lg:block"
       />
 
-      <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-20 nav_bg p-4 lg:p-10 rounded-[20px] border_map backdrop-blur-[100px] max-w-7xl mx-auto relative z-50">
+      <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 nav_bg p-4 lg:p-10 rounded-[20px] border_map backdrop-blur-[100px] max-w-7xl mx-auto relative z-50">
         {/* LEFT SIDE */}
         <div ref={leftRef} className="relative z-50">
           <h2 className="font-semibold text-2xl mb-2">
@@ -273,7 +273,7 @@ export default function ContactForm() {
             </p>
           ) : (
             <form
-              className="space-y-4 mt-10"
+              className="space-y-4 mt-6 sm:mt-10"
               onSubmit={(e) => {
                 e.preventDefault();
                 setSubmitted(true);

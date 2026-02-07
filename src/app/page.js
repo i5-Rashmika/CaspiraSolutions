@@ -13,7 +13,7 @@ export default function Home() {
 
   return (
     <>
-      <div>
+      <div className="overflow-x-clip">
         <Header />
         <ServicesSection />
         <OurWork />
@@ -25,3 +25,4 @@ export default function Home() {
     </>
   );
 }
+ 

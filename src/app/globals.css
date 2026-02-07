@@ -4,6 +4,7 @@
 
 body {
   font-family: var(--font-inter), sans-serif;
+  overflow-x: hidden;
 }
 
 @font-face {
@@ -113,13 +114,20 @@ body {
   position: absolute;
   top: -47%;
   right: 0;
-  width: 2662px;
+  width: 100%;
+  max-width: 2662px;
   height: 2000px;
   background-image: url("/images/png/ourServicebg.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: calc(100% + 400px) top;
   z-index: -1;
+}
+
+@media (min-width: 1024px) {
+  .ourService_bg::before {
+    width: 2662px;
+  }
 }
 
 .header_blur {

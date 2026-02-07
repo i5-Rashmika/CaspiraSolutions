@@ -53,9 +53,10 @@ export default function CardSlider() {
     setTimeout(() => setActiveBtn(""), 200);
   };
 
-  // ⭐ Horizontal Scroll on Vertical Scroll (your original effect)
+  // Horizontal Scroll on Vertical Scroll - disabled on mobile to prevent sync issues
   useEffect(() => {
     if (!isClient || !sliderRef.current) return;
+    if (window.innerWidth < 768) return;
 
     const cards = sliderRef.current.querySelectorAll(".card-item");
     const totalWidth = cards.length * cardWidth;
@@ -78,9 +79,10 @@ export default function CardSlider() {
     return () => ctx.revert();
   }, [isClient, cardWidth]);
 
-  // ⭐ Sleepy tilt + fade + blur → sharp + glow + parallax stagger
+  // Sleepy tilt + fade + blur - disabled on mobile for performance
   useEffect(() => {
     if (!isClient || !sliderRef.current) return;
+    if (window.innerWidth < 768) return;
 
     const cards = sliderRef.current.querySelectorAll(".card-item");
 
@@ -119,9 +121,10 @@ export default function CardSlider() {
     return () => ctx.revert();
   }, [isClient]);
 
-  // ⭐ Mouse-follow 3D tilt
+  // Mouse-follow 3D tilt - desktop only
   useEffect(() => {
     if (!isClient || !sliderRef.current) return;
+    if (window.innerWidth < 768) return;
 
     const cards = sliderRef.current.querySelectorAll(".card-item");
 
@@ -160,15 +163,17 @@ export default function CardSlider() {
     >
       {isClient && (
         <>
-          <motion.div ref={sliderRef} style={{ x }} className="flex gap-6 relative z-50">
+          <motion.div ref={sliderRef} style={{ x }} className="flex flex-col md:flex-row gap-6 relative z-50">
             {displayProducts.map((item, index) => (
               <div
                 key={index}
                 className="
                   card-item
-                  shrink-0 group transition-all duration-300 
+                  md:shrink-0 group transition-all duration-300
                   rounded-xl p-4 cursor-pointer
-                  min-w-[90%] sm:min-w-[450px] lg:min-w-[650px]
+                  w-full md:min-w-[450px] lg:min-w-[650px]
+                  bg-[#FFFFFF0D] border border-[#FFFFFF1A] backdrop-blur-sm
+                  hover:bg-[#FFFFFF1A] hover:border-[#FFFFFF33]
 
                 "
                 style={{ transformStyle: "preserve-3d" }}
@@ -180,8 +185,8 @@ export default function CardSlider() {
                     height={350}
                     width={650}
                     className="
-                      rounded-xl w-full 
-                      h-[200px] sm:h-[250px] lg:h-[330px] object-cover
+                      rounded-xl w-full
+                      h-auto object-cover
                       transition-transform duration-500 group-hover:scale-110
                     "
                   />

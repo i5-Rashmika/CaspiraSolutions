@@ -76,8 +76,8 @@ const OurWork = () => {
     // If not mounted, show basic content
     if (!isMounted) {
         return (
-            <div id="selected-projects" ref={sectionRef} className="my-35 relative" style={{ opacity: 1, visibility: 'visible' }}>
-                <div ref={spotlightRef} className="h-[700px] w-[138%] lg:w-[110%] absolute top-0 left-0">
+            <div id="selected-projects" ref={sectionRef} className="my-16 lg:my-35 relative overflow-x-clip" style={{ opacity: 1, visibility: 'visible' }}>
+                <div ref={spotlightRef} className="absolute top-0 left-0">
                     <Spotlight
                         className="-top-40 left-0 md:-top-20 md:left-60 absolute pointer-events-none"
                         fill="url(#spotlightGradient)"
@@ -89,7 +89,7 @@ const OurWork = () => {
                     alt="service"
                     height={555}
                     width={653}
-                    className="absolute right-0 top-100"
+                    className="absolute right-0 top-100 hidden lg:block"
                 />
 
                 <GradientText
@@ -112,8 +112,8 @@ const OurWork = () => {
     }
 
     return (
-        <div id="selected-projects" ref={sectionRef} className="my-35 relative" style={{ opacity: 1, visibility: 'visible' }}>
-            <div ref={spotlightRef} className="h-[700px] w-[138%] lg:w-[110%] absolute top-0 left-0">
+        <div id="selected-projects" ref={sectionRef} className="my-16 lg:my-35 relative overflow-x-clip" style={{ opacity: 1, visibility: 'visible' }}>
+            <div ref={spotlightRef} className="absolute top-0 left-0">
                 <Spotlight
                     className="-top-40 left-0 md:-top-20 md:left-60 absolute pointer-events-none"
                     fill="url(#spotlightGradient)"
