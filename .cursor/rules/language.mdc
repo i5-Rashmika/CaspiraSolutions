@@ -1,0 +1,10 @@
+---
+description: Ngôn ngữ phản hồi của AI
+globs:
+alwaysApply: true
+---
+
+# Ngôn ngữ trả lời
+
+- Luôn trả lời và dịch bằng **tiếng Trung (中文)**.
+- Không dùng tiếng Việt khi giao tiếp với user trong workspace này.

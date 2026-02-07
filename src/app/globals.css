@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
+@import "tw-animate-css";
+
+body {
+  font-family: var(--font-inter), sans-serif;
+}
+
+@font-face {
+  font-family: "Myanmar Text";
+  src: url("/fonts/mmrtext.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Myanmar Text";
+  src: url("/fonts/mmrtextb.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font_mmr {
+  font-family: "Myanmar Text";
+}
+
+/* CUSTOM-CSS */
+
+.buttonbg {
+  background: linear-gradient(136.84deg, #3b82f6 1.07%, #234c90 95.54%);
+}
+
+.nav_bg {
+  background: linear-gradient(
+    90.78deg,
+    rgba(59, 130, 246, 0.12) -0.71%,
+    rgba(35, 76, 144, 0.12) 113.55%
+  );
+}
+
+.custom_container {
+  max-width: 1288px;
+  margin-left: 12px;
+  margin-right: 12px;
+  margin: 0 auto;
+}
+
+.header_btn {
+  background: linear-gradient(
+    108.36deg,
+    rgba(59, 130, 246, 0.12) 0%,
+    rgba(59, 130, 246, 0.048) 99.24%
+  );
+}
+
+@theme inline {
+  --animate-spotlight: spotlight 2s ease 0.75s 1 forwards;
+}
+
+@keyframes spotlight {
+  0% {
+    opacity: 0;
+    transform: translate(-72%, -62%) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -40%) scale(1);
+  }
+}
+
+.spotlightColor {
+  border: 2px solid;
+
+  border-image-source: linear-gradient(
+    149.11deg,
+    #81bbff 13.53%,
+    rgba(129, 187, 255, 0) 128.26%
+  );
+}
+
+.footer_text {
+  background: linear-gradient(
+    108.36deg,
+    rgba(59, 130, 246, 0.08) 0%,
+    rgba(59, 130, 246, 0.032) 99.24%
+  );
+}
+
+.footerbg {
+  background-image: linear-gradient(
+      90.78deg,
+      rgba(59, 130, 246, 0.12) -0.71%,
+      rgba(35, 76, 144, 0.12) 113.55%
+    ),
+    url("../../public/images/png/footerbg.png");
+
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.ourService_bg {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+.ourService_bg::before {
+  content: "";
+  position: absolute;
+  top: -47%;
+  right: 0;
+  width: 2662px;
+  height: 2000px;
+  background-image: url("/images/png/ourServicebg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: calc(100% + 400px) top;
+  z-index: -1;
+}
+
+.header_blur {
+  backdrop-filter: blur(200px);
+}
+
+.main_blur {
+  backdrop-filter: blur(404px);
+}
+
+.prev_bg {
+  background: linear-gradient(
+      0deg,
+      rgba(245, 246, 250, 0.06),
+      rgba(245, 246, 250, 0.06)
+    ),
+    linear-gradient(108.36deg, #3b82f6 0%, rgba(59, 130, 246, 0.4) 99.24%);
+}
+
+.border_map {
+  border: 3px solid;
+  border-image-source: linear-gradient(
+    180.45deg,
+    rgba(59, 130, 246, 0.012) 34.14%,
+    rgba(59, 130, 246, 0.12) 102.26%
+  );
+}
+
+.contact_bg {
+  background: linear-gradient(
+    90.78deg,
+    rgba(59, 130, 246, 0.0072) -0.71%,
+    rgba(35, 76, 144, 0.0072) 113.55%
+  );
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.bg-\[radial-gradient\(ellipse_at_bottom\,_\#262626_0\%\,_\#000_100\%\)\] {
+  background: transparent !important;
+}
+
+.gradient_text {
+  background: linear-gradient(136.84deg, #3b82f6 1.07%, #234c90 95.54%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

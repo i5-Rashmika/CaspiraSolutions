@@ -1,0 +1,135 @@
+{
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "services": "Services",
+    "solutions": "Solutions",
+    "contact": "Contact",
+    "contactUs": "Contact Us",
+    "getStarted": "Get Started",
+    "brandName": "Caspira Solutions"
+  },
+  "header": {
+    "tag1": "All-in-one Workspace",
+    "tag2": "Designed for modern Teams",
+    "innovation": "Innovation",
+    "implementation": "Implementation",
+    "typed1": "Where <i>Innovation</i> Meets",
+    "typed2": "Where <i>Creativity</i> Meets",
+    "typed3": "Where <i>Vision</i> Meets",
+    "typed4": "Where <i>Expertise</i> Meets",
+    "typed5": "Where <i>Strategy</i> Meets",
+    "bottomWord1": "Implementation",
+    "bottomWord2": "Technology",
+    "bottomWord3": "Execution",
+    "bottomWord4": "Results",
+    "bottomWord5": "Growth",
+    "slogan": "Structured digital platforms designed to support internal systems, teams, and operations.",
+    "reviews": "5.0 (from 200+ reviews)",
+    "ourServices": "Our Services",
+    "ourProducts": "Our Products",
+    "selectedProjects": "Selected Projects",
+    "ourSolutions": "Our Solutions",
+    "solutionsSlogan": "Structured digital platforms designed to support internal systems, teams, and operations.",
+    "companies": "Caspira Solutions is designed for 400+ teams across different industries"
+  },
+  "services": {
+    "title": "OUR SERVICES",
+    "description": "A structured range of digital services focused on systems, design, and operational support.",
+    "whatWeProvide": "What we provide",
+    "items": {
+      "0": {
+        "name": "Customer Support & User Operations",
+        "description": "Build and manage scalable, multi-channel customer support systems that enhance user experience and service efficiency.",
+        "features": {
+          "0": "Multi-channel support solutions (live chat, email, messaging platforms)",
+          "1": "Customer support workflows, SOPs, and escalation processes",
+          "2": "Service quality monitoring and performance reporting",
+          "3": "Shift scheduling, handover processes, and operational coordination"
+        }
+      },
+      "1": {
+        "name": "UI / UX Design",
+        "description": "Design intuitive and user-centered digital experiences that simplify complex systems.",
+        "features": {
+          "0": "User journey mapping and behavior analysis",
+          "1": "Information architecture and product structure design",
+          "2": "UI design systems and component libraries",
+          "3": "Figma-based design delivery with developer-ready specifications"
+        }
+      },
+      "2": {
+        "name": "AI Knowledge Base & Intelligent Assistant Training",
+        "description": "Transform company knowledge into intelligent AI-powered assistants for customer support and internal operations.",
+        "features": {
+          "0": "Enterprise knowledge base setup (FAQs, workflows, documentation)",
+          "1": "AI answer training and intent classification",
+          "2": "Response boundary design and safety control",
+          "3": "Deployment of AI assistants on websites and internal platforms"
+        }
+      },
+      "3": {
+        "name": "Web & Internal System Development",
+        "description": "Develop secure, scalable websites and internal systems tailored to business needs.",
+        "features": {
+          "0": "Corporate websites and multi-language platforms",
+          "1": "Internal management systems and role-based access control",
+          "2": "Data management, logs, and reporting systems",
+          "3": "Secure cloud deployment and system maintenance"
+        }
+      },
+      "4": {
+        "name": "Business Operations & Workflow Optimization",
+        "description": "Improve operational stability and efficiency through structured workflows and automation.",
+        "features": {
+          "0": "Business process analysis and SOP design",
+          "1": "Team collaboration and task management systems",
+          "2": "Operational data analysis and visualization",
+          "3": "Automation tools to reduce manual workload"
+        }
+      }
+    }
+  },
+  "footer": {
+    "footerDescHome": "Web-design and standard custom software solutions to boost your unique business needs.",
+    "footerDescOther": "Custom software solutions tailored to your business requirements.",
+    "ourServices": "Our Services",
+    "ourProducts": "Our Products",
+    "contactInfo": "Contact Info",
+    "products": {
+      "0": "Caspira Solutions for Enterprise",
+      "1": "CRM Dashboard",
+      "2": "Project Management Tool",
+      "3": "Analytics Platform"
+    },
+    "services": {
+      "0": "Software Development",
+      "1": "Full Stack Development",
+      "2": "Artificial Intelligence",
+      "3": "UVIAR Design"
+    },
+    "brandName": "Caspira Solutions",
+    "copyright": "© 2005 Caspira Solutions All Rights Reserved"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Get in touch with our team to discuss systems, workflows, or support requirements.",
+    "getInTouch": "Get In Touch",
+    "weLoveToHear": "Share a brief overview of your needs, and our team will follow up accordingly.",
+    "fullName": "Full Name",
+    "workEmail": "Work Email",
+    "organization": "Organization",
+    "contactNumber": "Contact Number (optional)",
+    "message": "Briefly describe your system, workflow, or support requirements.",
+    "submit": "Contact Our Team",
+    "regionalContact": "Regional Contact",
+    "responseTime": "Typical response time: 1–2 business days",
+    "regions": "Malaysia, Armenian, Hindi, Russian",
+    "compliance": "Information submitted will be used solely to respond to your inquiry.",
+    "successMessage": "Thank you. We'll get back to you within 1–2 business days."
+  },
+  "testimonial": {
+    "title": "Testimonials",
+    "subtitle": "Feedback from teams using Caspira Solutions to improve systems, workflows, and user support."
+  }
+}
