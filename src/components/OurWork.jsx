@@ -127,7 +127,7 @@ const OurWork = () => {
 
                 <h2
                     ref={titleRef}
-                    className="text-[#FFFFFFE5] font-bold text-2xl sm:text-3xl md:text-4xl lg:text-[48px] font_mmr text-center mt-16"
+                    className="text-[#FFFFFFE5] font-bold text-xl sm:text-2xl md:text-3xl lg:text-[38px] font_mmr text-center mt-16"
                 >
                     Selected Projects
                 </h2>
@@ -168,7 +168,7 @@ const OurWork = () => {
                     animateOnScroll={true}
                     trigger={sectionRef}
                 >
-                    <h2 className="text-[#FFFFFFE5] font-bold text-2xl sm:text-3xl md:text-4xl lg:text-[48px] font_mmr text-center mt-16">
+                    <h2 className="text-[#FFFFFFE5] font-bold text-xl sm:text-2xl md:text-3xl lg:text-[38px] font_mmr text-center mt-16">
                         Selected Projects
                     </h2>
                 </TextAnimation>
