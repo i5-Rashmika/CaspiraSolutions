@@ -180,7 +180,7 @@ const Header = () => {
             {/* Rectangle BG */}
             <div ref={rectRef} className="absolute right-0 -top-30 h-full w-full z-0 overflow-hidden">
                 <Image
-                    src={"/images/png/headerlightray.png"}
+                    src={"/images/png/headerellipse.png"}
                     alt="background"
                     height={863}
                     width={700}

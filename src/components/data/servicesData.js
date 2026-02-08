@@ -73,7 +73,7 @@ export const categories = [
     "Customer Support",
     "Brand Design",
 ];
-
+ 
 /** All Work 筛选意图说明（默认视图下分类栏下方一行） */
 export const allWorkDescription = "A curated selection of our most impactful design and system work.";
 
@@ -144,7 +144,7 @@ export const products = [
     },
     {
         title: "Customer Support Platform",
-        img: "/images/png/caspira-nav 3.webp",
+        img: "/images/png/caspira-nav3.webp",
         shortDesc: "Integrated support interfaces for managing user communication and service workflows.",
         ctas: [
             { label: "Learn More", href: "#" },
