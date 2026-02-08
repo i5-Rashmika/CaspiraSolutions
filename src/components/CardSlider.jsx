@@ -28,12 +28,12 @@ export default function CardSlider() {
 
   const cardWidth =
     typeof window === "undefined"
-      ? 650
+      ? 480
       : window.innerWidth < 450
-      ? window.innerWidth * 0.9
+      ? window.innerWidth * 0.85
       : window.innerWidth < 768
-      ? 450
-      : 650;
+      ? 360
+      : 480;
 
   // Resize
   useEffect(() => {
@@ -173,8 +173,8 @@ export default function CardSlider() {
                 className="
                   card-item
                   md:shrink-0 group transition-all duration-300
-                  rounded-xl p-4 cursor-pointer
-                  w-full md:min-w-[450px] lg:min-w-[650px]
+                  rounded-xl p-3 cursor-pointer
+                  w-full md:min-w-[340px] lg:min-w-[480px]
                   glass-card gradient-border-animated shimmer-hover glow-hover
                 "
                 style={{ transformStyle: "preserve-3d" }}
@@ -184,8 +184,8 @@ export default function CardSlider() {
                   <Image
                     src={item.img}
                     alt={item.title}
-                    height={350}
-                    width={650}
+                    height={280}
+                    width={480}
                     className="
                       rounded-xl w-full
                       h-auto object-cover
@@ -200,19 +200,19 @@ export default function CardSlider() {
                   </div>
                 </div>
 
-                <h2 className="font-semibold text-xl text-white mt-3">
+                <h2 className="font-semibold text-lg text-white mt-2">
                   {item.title}
                 </h2>
 
-                <p className="text-[#FFFFFFCC] text-sm my-2">{item.shortDesc}</p>
+                <p className="text-[#FFFFFFCC] text-xs my-1.5 line-clamp-2">{item.shortDesc}</p>
 
-                <div className="flex flex-wrap gap-2 mt-4">
+                <div className="flex flex-wrap gap-2 mt-3">
                   {item.ctas?.map((cta, i) => (
                     <Link
                       key={i}
                       href={cta.href}
                       onClick={(e) => e.stopPropagation()}
-                      className="font-normal text-base rounded-[36px] nav_bg py-2 px-4 inline-block hover:opacity-90 transition-opacity shimmer-hover"
+                      className="font-normal text-sm rounded-[36px] nav_bg py-1.5 px-3.5 inline-block hover:opacity-90 transition-opacity shimmer-hover"
                     >
                       {cta.label}
                     </Link>
