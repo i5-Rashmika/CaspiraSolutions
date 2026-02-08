@@ -180,16 +180,16 @@ export default function CardSlider() {
                 style={{ transformStyle: "preserve-3d" }}
                 onClick={() => setSelectedProduct(item)}
               >
-                <div className="overflow-hidden rounded-xl w-full relative">
+                <div className="rounded-xl w-full relative">
                   <Image
                     src={item.img}
                     alt={item.title}
-                    height={280}
+                    height={400}
                     width={480}
                     className="
                       rounded-xl w-full
-                      h-auto object-cover
-                      transition-transform duration-500 group-hover:scale-110
+                      h-auto object-contain
+                      transition-transform duration-500 group-hover:scale-105
                     "
                   />
                   {/* Hover overlay hint */}
