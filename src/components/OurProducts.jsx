@@ -79,6 +79,26 @@ const OurProducts = () => {
                     },
                 }
             );
+
+            // Subtitle scroll-reveal
+            const subtitleEl = sectionRef.current.querySelector(".ourproducts-reveal");
+            if (subtitleEl) {
+                gsap.fromTo(
+                    subtitleEl,
+                    { opacity: 0, y: 20 },
+                    {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.8,
+                        ease: "power3.out",
+                        scrollTrigger: {
+                            trigger: sectionRef.current,
+                            start: "top 80%",
+                            toggleActions: "play none none none",
+                        },
+                    }
+                );
+            }
         }, sectionRef);
 
         // Refresh ScrollTrigger
@@ -162,11 +182,13 @@ const OurProducts = () => {
                 </TextAnimation>
             </div>
 
-            <TextAnimation>
-                <SubParagraph
-                    title={t('solutionsSlogan')}
-                />
-            </TextAnimation>
+            <div className="ourproducts-reveal">
+                <TextAnimation>
+                    <SubParagraph
+                        title={t('solutionsSlogan')}
+                    />
+                </TextAnimation>
+            </div>
 
             <CardSlider />
         </div>

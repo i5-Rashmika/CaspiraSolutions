@@ -209,7 +209,7 @@ const ServicesSection = () => {
                     <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
                         {/* Left Menu */}
                         <div className="lg:w-1/4">
-                            <div className="nav_bg rounded-lg p-3 lg:p-4 w-full lg:min-w-[14rem] lg:max-w-[18rem] h-full">
+                            <div className="glass-card nav_bg rounded-lg p-3 lg:p-4 w-full lg:min-w-[14rem] lg:max-w-[18rem] h-full">
                                 {/* Mobile buttons */}
                                 <div
                                     ref={scrollBarRef}
@@ -222,7 +222,7 @@ const ServicesSection = () => {
                                                 key={index}
                                                 onClick={() => setActiveService(index)}
                                                 className={`px-4 py-3 rounded-lg transition-all duration-200 text-xs font-medium flex items-center gap-2 border-l-2 border-transparent whitespace-nowrap cursor-pointer shrink-0 ${activeService === index
-                                                    ? "bg-[#0D1528] text-white border-l-[#3B82F6]"
+                                                    ? "bg-[#0D1528] text-white border-l-[#3B82F6] glow-active"
                                                     : "text-[#9E9FA7]"
                                                     }`}
                                             >
@@ -233,14 +233,14 @@ const ServicesSection = () => {
                                     </div>
                                 </div>
 
-                                {/* Desktop buttons：名称可换行完整显示 */}
+                                {/* Desktop buttons */}
                                 <ul className="hidden lg:block space-y-4">
                                     {servicesList.map((service, index) => (
                                         <li key={index}>
                                             <button
                                                 onClick={() => setActiveService(index)}
                                                 className={`w-full text-left px-4 py-3 rounded-lg transition-all duration-200 text-sm font-medium flex items-start gap-3 border-l-2 border-transparent cursor-pointer ${activeService === index
-                                                    ? "bg-[#0D1528] text-white border-l-[#3B82F6]"
+                                                    ? "bg-[#0D1528] text-white border-l-[#3B82F6] glow-active"
                                                     : "text-[#9E9FA7] hover:text-white hover:bg-white/5"
                                                     }`}
                                             >
@@ -280,7 +280,7 @@ const ServicesSection = () => {
                                     {servicesList[activeService].features.map((feature, index) => (
                                         <div
                                             key={index}
-                                            className="nav_bg rounded-lg p-4 sm:p-6 transition-colors duration-200 hover:bg-white/5 min-w-0"
+                                            className="glass-card gradient-border shimmer-hover hover-lift rounded-lg p-4 sm:p-6 transition-colors duration-200 min-w-0"
                                         >
                                             <div className="flex items-start space-x-3">
                                                 <span className="text-green-500 font-bold mt-1 shrink-0">
@@ -347,7 +347,7 @@ const ServicesSection = () => {
                 <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 animate-service">
                     {/* Left Menu */}
                     <div className="lg:w-1/4 animate-service">
-                        <div className="nav_bg rounded-lg p-3 lg:p-4 w-full lg:min-w-[14rem] lg:max-w-[18rem] h-full">
+                        <div className="glass-card nav_bg rounded-lg p-3 lg:p-4 w-full lg:min-w-[14rem] lg:max-w-[18rem] h-full">
                             {/* Mobile buttons */}
                             <div
                                 ref={scrollBarRef}
@@ -360,7 +360,7 @@ const ServicesSection = () => {
                                             key={index}
                                             onClick={() => setActiveService(index)}
                                             className={`px-4 py-3 rounded-lg transition-all duration-200 text-xs font-medium flex items-center gap-2 border-l-2 border-transparent whitespace-nowrap cursor-pointer shrink-0 ${activeService === index
-                                                ? "bg-[#0D1528] text-white border-l-[#3B82F6]"
+                                                ? "bg-[#0D1528] text-white border-l-[#3B82F6] glow-active"
                                                 : "text-[#9E9FA7]"
                                                 }`}
                                         >
@@ -371,14 +371,14 @@ const ServicesSection = () => {
                                 </div>
                             </div>
 
-                            {/* Desktop buttons：名称可换行完整显示 */}
+                            {/* Desktop buttons */}
                             <ul className="hidden lg:block space-y-4">
                                 {servicesList.map((service, index) => (
                                     <li key={index}>
                                         <button
                                             onClick={() => setActiveService(index)}
                                             className={`w-full text-left px-4 py-3 rounded-lg transition-all duration-200 text-sm font-medium flex items-start gap-3 border-l-2 border-transparent cursor-pointer ${activeService === index
-                                                ? "bg-[#0D1528] text-white border-l-[#3B82F6]"
+                                                ? "bg-[#0D1528] text-white border-l-[#3B82F6] glow-active"
                                                 : "text-[#9E9FA7] hover:text-white hover:bg-white/5"
                                                 }`}
                                         >
@@ -423,7 +423,7 @@ const ServicesSection = () => {
                                     <div
                                         key={index}
                                         ref={(el) => (cardsRef.current[index] = el)}
-                                        className="nav_bg rounded-lg p-4 sm:p-6 transition-colors duration-200 hover:bg-white/5 min-w-0"
+                                        className="glass-card gradient-border shimmer-hover hover-lift rounded-lg p-4 sm:p-6 transition-colors duration-200 min-w-0"
                                     >
                                         <div className="flex items-start space-x-3">
                                             <span className="text-green-500 font-bold mt-1 shrink-0">

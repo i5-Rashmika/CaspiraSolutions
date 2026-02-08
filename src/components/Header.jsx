@@ -20,6 +20,7 @@ import {
 import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { AnimatePresence, motion } from "framer-motion";
 import TextAnimation from "./animation/TextAnimation";
 import Button from './common/Button';
 
@@ -40,6 +41,8 @@ const Header = () => {
     const sliderRef = useRef(null);
     const mainImageRef = useRef(null);
     const imageContainerRef = useRef(null);
+    const leftStrokeRef = useRef(null);
+    const rightStrokeRef = useRef(null);
     const [wordIndex, setWordIndex] = useState(0);
 
     useEffect(() => {
@@ -131,6 +134,32 @@ const Header = () => {
                 ease: "none",
                 repeat: -1,
             });
+
+            // Floating parallax on decorative strokes
+            if (leftStrokeRef.current) {
+                gsap.to(leftStrokeRef.current, {
+                    y: -60,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: headerRef.current,
+                        start: "top top",
+                        end: "bottom top",
+                        scrub: 1.5,
+                    },
+                });
+            }
+            if (rightStrokeRef.current) {
+                gsap.to(rightStrokeRef.current, {
+                    y: -80,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: headerRef.current,
+                        start: "top top",
+                        end: "bottom top",
+                        scrub: 1.5,
+                    },
+                });
+            }
         };
 
         // Run animations after ref is ready
@@ -189,6 +218,7 @@ const Header = () => {
             </div>
 
             <Image
+                ref={leftStrokeRef}
                 src={"/images/png/Leftstroke.png"}
                 alt="left stroke"
                 height={700}
@@ -213,6 +243,7 @@ const Header = () => {
             />
 
             <Image
+                ref={rightStrokeRef}
                 src={"/images/png/Rightstroke.png"}
                 alt="right stroke"
                 height={700}
@@ -239,7 +270,18 @@ const Header = () => {
                     <p className="font-semibold gradient_text">
                         {t.rich("typed5", { i: (chunks) => <i>{chunks}</i> })}
                     </p>
-                    <p className="font-bold text-white mt-2 text-[1.08em]">{rotatingWord}</p>
+                    <AnimatePresence mode="wait">
+                        <motion.p
+                            key={rotatingWord}
+                            initial={{ opacity: 0, y: 12 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -12 }}
+                            transition={{ duration: 0.4, ease: "easeInOut" }}
+                            className="font-bold text-white mt-2 text-[1.08em]"
+                        >
+                            {rotatingWord}
+                        </motion.p>
+                    </AnimatePresence>
                 </div>
             </div>
 

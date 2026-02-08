@@ -8,7 +8,7 @@ export default function Button({ title, onClick, href, className = "" }) {
 
         <Link href={href || "#"}
             onClick={onClick}
-            className={`px-3 py-1 text-base font-normal text-white rounded-[36px] buttonbg transition flex gap-3 items-center cursor-pointer group ${className}`}
+            className={`px-3 py-1 text-base font-normal text-white rounded-[36px] buttonbg transition flex gap-3 items-center cursor-pointer group shimmer-hover glow-hover ${className}`}
         >
             <span>{title}</span>
 

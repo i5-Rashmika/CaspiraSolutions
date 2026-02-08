@@ -4,7 +4,11 @@
 // No "Products/Services" lists, no pricing, no growth claims, no sensitive keywords
 // Tailwind-only, drop-in replacement
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Footer({
   email = "caspirasolutions@gmail.com",
@@ -13,13 +17,41 @@ export default function Footer({
   phone = "",
 }) {
   const year = new Date().getFullYear();
+  const footerRef = useRef(null);
+
+  useEffect(() => {
+    if (!footerRef.current) return;
+
+    const ctx = gsap.context(() => {
+      const columns = footerRef.current.querySelectorAll(".footer-col");
+
+      gsap.fromTo(
+        columns,
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.7,
+          stagger: 0.15,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: footerRef.current,
+            start: "top 90%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    }, footerRef);
+
+    return () => ctx.revert();
+  }, []);
 
   return (
-    <footer className="w-full border-t border-white/10 bg-black/20 mt-20">
+    <footer ref={footerRef} className="w-full border-t border-white/10 bg-black/20 mt-20">
       <div className="mx-auto max-w-6xl px-6 py-12">
         <div className="grid gap-10 md:grid-cols-3">
           {/* Brand */}
-          <div>
+          <div className="footer-col">
             <div className="flex items-center gap-3">
               <div>
                 <p className="text-base font-semibold text-white/90">
@@ -60,7 +92,7 @@ export default function Footer({
           </div>
 
           {/* Contact */}
-          <div>
+          <div className="footer-col">
             <p className="text-sm font-semibold text-white/85">Contact</p>
 
             <div className="mt-4 space-y-3 text-sm text-white/70">
@@ -98,27 +130,27 @@ export default function Footer({
           </div>
 
           {/* Quick Links (anchors match page section ids) */}
-          <div>
+          <div className="footer-col">
             <p className="text-sm font-semibold text-white/85">Quick Links</p>
 
             <ul className="mt-4 space-y-3 text-sm text-white/70">
               <li>
-                <a className="hover:text-white transition-colors" href="#our-services">
+                <a className="hover:text-white transition-colors link-underline" href="#our-services">
                   Services
                 </a>
               </li>
               <li>
-                <a className="hover:text-white transition-colors" href="#our-solutions">
+                <a className="hover:text-white transition-colors link-underline" href="#our-solutions">
                   Solutions
                 </a>
               </li>
               <li>
-                <a className="hover:text-white transition-colors" href="#selected-projects">
+                <a className="hover:text-white transition-colors link-underline" href="#selected-projects">
                   Selected Projects
                 </a>
               </li>
               <li>
-                <a className="hover:text-white transition-colors" href="#contact">
+                <a className="hover:text-white transition-colors link-underline" href="#contact">
                   Contact
                 </a>
               </li>

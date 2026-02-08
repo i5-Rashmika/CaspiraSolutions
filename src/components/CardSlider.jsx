@@ -6,6 +6,7 @@ import { motion, useMotionValue, animate } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
 import { PrevArrow } from "./common/Icons";
 import { products } from "./data/servicesData";
+import ProductPreviewModal from "./ProductPreviewModal";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -17,6 +18,7 @@ export default function CardSlider() {
   const containerRef = useRef(null);
   const x = useMotionValue(0);
   const [activeBtn, setActiveBtn] = useState("");
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
   useEffect(() => {
     queueMicrotask(() => setIsClient(true));
@@ -58,17 +60,18 @@ export default function CardSlider() {
     if (!isClient || !sliderRef.current) return;
     if (window.innerWidth < 768) return;
 
-    const cards = sliderRef.current.querySelectorAll(".card-item");
-    const totalWidth = cards.length * cardWidth;
+    const sliderScrollWidth = sliderRef.current.scrollWidth;
+    const containerWidth = containerRef.current.offsetWidth;
+    const scrollDistance = sliderScrollWidth - containerWidth;
 
     const ctx = gsap.context(() => {
       gsap.to(sliderRef.current, {
-        x: -(totalWidth - window.innerWidth + 100),
+        x: -scrollDistance,
         ease: "none",
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top 20%",
-          end: () => `+=${totalWidth}`,
+          end: () => `+=${sliderScrollWidth}`,
           scrub: true,
           pin: true,
           anticipatePin: 1,
@@ -172,13 +175,12 @@ export default function CardSlider() {
                   md:shrink-0 group transition-all duration-300
                   rounded-xl p-4 cursor-pointer
                   w-full md:min-w-[450px] lg:min-w-[650px]
-                  bg-[#FFFFFF0D] border border-[#FFFFFF1A] backdrop-blur-sm
-                  hover:bg-[#FFFFFF1A] hover:border-[#FFFFFF33]
-
+                  glass-card gradient-border-animated shimmer-hover glow-hover
                 "
                 style={{ transformStyle: "preserve-3d" }}
+                onClick={() => setSelectedProduct(item)}
               >
-                <div className="overflow-hidden rounded-xl w-full">
+                <div className="overflow-hidden rounded-xl w-full relative">
                   <Image
                     src={item.img}
                     alt={item.title}
@@ -190,6 +192,12 @@ export default function CardSlider() {
                       transition-transform duration-500 group-hover:scale-110
                     "
                   />
+                  {/* Hover overlay hint */}
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 rounded-xl flex items-center justify-center opacity-0 group-hover:opacity-100">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" className="text-white drop-shadow-lg">
+                      <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </div>
                 </div>
 
                 <h2 className="font-semibold text-xl text-white mt-3">
@@ -203,7 +211,8 @@ export default function CardSlider() {
                     <Link
                       key={i}
                       href={cta.href}
-                      className="font-normal text-base rounded-[36px] nav_bg py-2 px-4 inline-block hover:opacity-90 transition-opacity"
+                      onClick={(e) => e.stopPropagation()}
+                      className="font-normal text-base rounded-[36px] nav_bg py-2 px-4 inline-block hover:opacity-90 transition-opacity shimmer-hover"
                     >
                       {cta.label}
                     </Link>
@@ -237,6 +246,11 @@ export default function CardSlider() {
           </div>
         </>
       )}
+
+      <ProductPreviewModal
+        product={selectedProduct}
+        onClose={() => setSelectedProduct(null)}
+      />
     </div>
   );
 }

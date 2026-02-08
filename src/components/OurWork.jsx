@@ -17,6 +17,7 @@ const OurWork = () => {
     const sectionRef = useRef(null);
     const spotlightRef = useRef(null);
     const titleRef = useRef(null);
+    const subtitleRef = useRef(null);
     const [isMounted, setIsMounted] = useState(false);
 
     useEffect(() => {
@@ -54,6 +55,33 @@ const OurWork = () => {
                         end: "bottom 50%",
                         toggleActions: "play reverse play reverse",
                         markers: false,
+                    },
+                }
+            );
+        }, sectionRef);
+
+        return () => ctx.revert();
+    }, [isMounted]);
+
+    // Scroll-reveal on title and subtitle
+    useEffect(() => {
+        if (!isMounted || !sectionRef.current) return;
+
+        const ctx = gsap.context(() => {
+            const els = sectionRef.current.querySelectorAll(".ourwork-reveal");
+            gsap.fromTo(
+                els,
+                { opacity: 0, y: 30 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    stagger: 0.15,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: sectionRef.current,
+                        start: "top 85%",
+                        toggleActions: "play none none none",
                     },
                 }
             );
@@ -134,19 +162,23 @@ const OurWork = () => {
             />
 
             {/* Fixed TextAnimation with proper props */}
-            <TextAnimation
-                delay={0.2}
-                animateOnScroll={true}
-                trigger={sectionRef}
-            >
-                <h2 className="text-[#FFFFFFE5] font-bold text-2xl sm:text-3xl md:text-4xl lg:text-[48px] font_mmr text-center mt-16">
-                    Selected Projects
-                </h2>
-            </TextAnimation>
+            <div className="ourwork-reveal">
+                <TextAnimation
+                    delay={0.2}
+                    animateOnScroll={true}
+                    trigger={sectionRef}
+                >
+                    <h2 className="text-[#FFFFFFE5] font-bold text-2xl sm:text-3xl md:text-4xl lg:text-[48px] font_mmr text-center mt-16">
+                        Selected Projects
+                    </h2>
+                </TextAnimation>
+            </div>
 
-            <TextAnimation>
-                <SubParagraph title="A curated selection of interface, system, and design projects across different domains." />
-            </TextAnimation>
+            <div className="ourwork-reveal">
+                <TextAnimation>
+                    <SubParagraph title="A curated selection of interface, system, and design projects across different domains." />
+                </TextAnimation>
+            </div>
 
             <PortfolioSection />
         </div>

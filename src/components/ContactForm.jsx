@@ -11,9 +11,9 @@ import RegionalCoverageCard from "./RegionalCoverageCard";
 gsap.registerPlugin(ScrollTrigger);
 
 const inputBase =
-  "nav_bg rounded-[55px] px-4 py-3 text-white placeholder-white/40 outline-none transition-all duration-200 border border-transparent focus:border-white/40 focus:ring-2 focus:ring-blue-400/20 focus:ring-offset-0";
+  "nav_bg rounded-[55px] px-4 py-3 text-white placeholder-white/40 outline-none transition-all duration-200 border border-transparent input-glow";
 const textareaBase =
-  "w-full nav_bg rounded-xl px-4 py-3 text-white placeholder-white/40 resize-none outline-none transition-all duration-200 border border-transparent focus:border-white/40 focus:ring-2 focus:ring-blue-400/20 focus:ring-offset-0";
+  "w-full nav_bg rounded-xl px-4 py-3 text-white placeholder-white/40 resize-none outline-none transition-all duration-200 border border-transparent input-glow";
 
 export default function ContactForm() {
   const t = useTranslations("contact");
@@ -148,7 +148,7 @@ export default function ContactForm() {
           className="mx-auto absolute left-0 top-0 h-full z-0 hidden lg:block"
         />
 
-        <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 nav_bg p-4 lg:p-10 rounded-[20px] border_map backdrop-blur-[100px] max-w-7xl mx-auto relative z-50">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 glass-card-strong gradient-border p-4 lg:p-10 rounded-[20px] max-w-7xl mx-auto relative z-50">
           {/* LEFT SIDE */}
           <div ref={leftRef} className="relative z-50" style={{ opacity: 1 }}>
             <h2 className="font-semibold text-2xl mb-2">
@@ -197,7 +197,7 @@ export default function ContactForm() {
                 />
                 <button
                   type="submit"
-                  className="w-full buttonbg cursor-pointer text-white rounded-full py-3 mt-4 flex items-center justify-center gap-2.5"
+                  className="w-full buttonbg cursor-pointer text-white rounded-full py-3 mt-4 flex items-center justify-center gap-2.5 glow-pulse shimmer-hover"
                 >
                   {t("submit")}
                 </button>
@@ -214,7 +214,7 @@ export default function ContactForm() {
             className="flex flex-col justify-between relative z-50"
             style={{ opacity: 1 }}
           >
-            <div className="nav_bg rounded-xl p-4 text-white border border-[#3b82f61f]">
+            <div className="glass-card gradient-border rounded-xl p-4 text-white">
               <p className="text-sm font-semibold text-white/90 mb-2">
                 {t("regionalContact")}
               </p>

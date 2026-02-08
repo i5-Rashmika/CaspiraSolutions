@@ -7,7 +7,7 @@ export default function RegionalCoverageCard() {
   return (
     <section
       aria-label="Regional coverage"
-      className="w-full rounded-2xl border border-white/10 bg-white/5 p-6 shadow-[0_10px_40px_rgba(0,0,0,0.35)] backdrop-blur-md"
+      className="w-full rounded-2xl p-6 shadow-[0_10px_40px_rgba(0,0,0,0.35)] glass-card-strong gradient-border"
     >
       {/* Title */}
       <h3 className="text-lg font-semibold text-white/90">Regional Coverage</h3>

@@ -187,7 +187,7 @@ export function NavbarDemo() {
                                 className={cn(
                                     "relative overflow-hidden group",
                                     isScrolled ? "text-white hover:text-[#3B82F6]" : "text-white hover:text-[#3B82F6]",
-                                    isActive && "text-white/95 underline decoration-white/50 underline-offset-4"
+                                    isActive && "text-white/95 underline decoration-white/50 underline-offset-4 drop-shadow-[0_0_8px_rgba(59,130,246,0.6)]"
                                 )}
                             >
                                 <div className="relative overflow-hidden leading-[1.1]">
