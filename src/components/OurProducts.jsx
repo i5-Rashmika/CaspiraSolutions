@@ -156,7 +156,7 @@ const OurProducts = () => {
                     'absolute inset-0 flex items-center justify-center rounded-xl '
                 )}
             />
-            <div ref={spotlightRef} className="h-[700px] w-full lg:w-[110%] absolute top-0 left-0">
+            <div ref={spotlightRef} className="h-[500px] sm:h-[600px] lg:h-[700px] w-full absolute top-0 left-0">
                 <Spotlight
                     className="-top-40 left-0 md:-top-20 md:left-60 absolute pointer-events-none"
                     fill="url(#spotlightGradient)"

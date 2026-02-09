@@ -153,7 +153,7 @@ const OurWork = () => {
                 alt="service"
                 height={555}
                 width={653}
-                className="absolute right-0 top-100"
+                className="absolute right-0 top-100 hidden lg:block"
             />
 
             <GradientText

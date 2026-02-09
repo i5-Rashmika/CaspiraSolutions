@@ -148,7 +148,7 @@ export default function ContactForm() {
           className="mx-auto absolute left-0 top-0 h-full z-0 hidden lg:block"
         />
 
-        <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 glass-card-strong gradient-border p-4 lg:p-10 rounded-[20px] max-w-7xl mx-auto relative z-50">
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-20 glass-card-strong gradient-border p-4 md:p-8 lg:p-10 rounded-[20px] max-w-7xl mx-auto relative z-50">
           {/* LEFT SIDE */}
           <div ref={leftRef} className="relative z-50" style={{ opacity: 1 }}>
             <h2 className="font-semibold text-2xl mb-2">
@@ -257,7 +257,7 @@ export default function ContactForm() {
         className="mx-auto absolute left-0 top-0 h-full z-0 hidden lg:block"
       />
 
-      <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 nav_bg p-4 lg:p-10 rounded-[20px] border_map backdrop-blur-[100px] max-w-7xl mx-auto relative z-50">
+      <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-20 nav_bg p-4 md:p-8 lg:p-10 rounded-[20px] border_map backdrop-blur-[100px] max-w-7xl mx-auto relative z-50">
         {/* LEFT SIDE */}
         <div ref={leftRef} className="relative z-50">
           <h2 className="font-semibold text-2xl mb-2">

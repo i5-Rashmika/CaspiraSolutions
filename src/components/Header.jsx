@@ -337,7 +337,7 @@ const Header = () => {
                         {t("companies")}
                     </p>
 
-                    <div className="relative mt-10 overflow-hidden h-[100px] lg:h-[220px]">
+                    <div className="relative mt-10 overflow-hidden h-[100px] md:h-[160px] lg:h-[220px]">
 
                         <Image
                             src={"/images/png/leftellipse.png"}
