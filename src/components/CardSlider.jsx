@@ -61,8 +61,11 @@ export default function CardSlider() {
     if (window.innerWidth < 768) return;
 
     const sliderScrollWidth = sliderRef.current.scrollWidth;
-    const containerWidth = containerRef.current.offsetWidth;
-    const scrollDistance = sliderScrollWidth - containerWidth;
+    const containerStyles = window.getComputedStyle(containerRef.current);
+    const paddingLeft = parseFloat(containerStyles.paddingLeft);
+    const paddingRight = parseFloat(containerStyles.paddingRight);
+    const contentWidth = containerRef.current.offsetWidth - paddingLeft - paddingRight;
+    const scrollDistance = sliderScrollWidth - contentWidth;
 
     const ctx = gsap.context(() => {
       gsap.to(sliderRef.current, {
@@ -70,7 +73,7 @@ export default function CardSlider() {
         ease: "none",
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "top 20%",
+          start: "top 12%",
           end: () => `+=${scrollDistance}`,
           scrub: 0.8,
           pin: true,
@@ -162,18 +165,18 @@ export default function CardSlider() {
   return (
     <div
       ref={containerRef}
-      className="max-w-7xl mx-auto overflow-hidden mb-16 py-10 px-4 sm:px-10"
+      className="max-w-[1400px] w-full mx-auto overflow-hidden mb-16 py-10 px-4 sm:px-8 md:px-10 lg:px-16 relative z-10"
     >
       {isClient && (
         <>
-          <motion.div ref={sliderRef} style={{ x }} className="flex flex-col md:flex-row gap-6 relative z-50">
+          <motion.div ref={sliderRef} style={{ x }} className="flex flex-col md:flex-row gap-6 relative">
             {displayProducts.map((item, index) => (
               <div
                 key={index}
                 className="
                   card-item
                   md:shrink-0 group transition-all duration-300
-                  rounded-xl p-3 cursor-pointer
+                  rounded-xl p-2 cursor-pointer
                   w-full md:min-w-[340px] lg:min-w-[480px]
                   glass-card gradient-border-animated shimmer-hover glow-hover
                 "
@@ -188,8 +191,8 @@ export default function CardSlider() {
                     width={480}
                     className="
                       rounded-xl w-full
-                      h-auto object-cover scale-90
-                      transition-transform duration-500 group-hover:scale-95
+                      h-auto object-cover
+                      transition-transform duration-500 group-hover:scale-105
                     "
                   />
                   {/* Hover overlay hint */}
@@ -200,13 +203,13 @@ export default function CardSlider() {
                   </div>
                 </div>
 
-                <h2 className="font-semibold text-lg text-white mt-2">
+                <h2 className="font-semibold text-lg text-white mt-1.5">
                   {item.title}
                 </h2>
 
                 <p className="text-[#FFFFFFCC] text-xs my-1.5 line-clamp-2">{item.shortDesc}</p>
 
-                <div className="flex flex-wrap gap-2 mt-3">
+                <div className="flex flex-wrap gap-2 mt-2">
                   {item.ctas?.map((cta, i) => (
                     <Link
                       key={i}
