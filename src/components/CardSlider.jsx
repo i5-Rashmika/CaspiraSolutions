@@ -71,8 +71,8 @@ export default function CardSlider() {
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top 20%",
-          end: () => `+=${sliderScrollWidth}`,
-          scrub: true,
+          end: () => `+=${scrollDistance}`,
+          scrub: 0.8,
           pin: true,
           anticipatePin: 1,
         },
